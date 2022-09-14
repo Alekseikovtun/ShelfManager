@@ -1,6 +1,3 @@
-from xml.dom.minidom import Document
-
-
 def get_name():
     number = input('Enter the document number')
     for data in documents:
@@ -30,7 +27,9 @@ def add_doc():
     doc["type"] = input('Add a document type: ')
     doc["number"] = input('Add a document number: ')
     doc["name"] = input('Add Name: ')
-    return doc
+    documents.append(doc)
+    directories[shelf] = doc["number"]
+    return documents, directories
 
 
 
@@ -48,20 +47,18 @@ directories = {
 
 
 while True:
-    print('Available commands: p, s, l, a, end')
+    print('Available commands: people, shelf, list, add, end')
     comand_code = input('Enter command name: ')
 
-    if comand_code == 'p':
+    if comand_code == 'people':
         print(get_name())
-
-    elif comand_code == 's':
+    elif comand_code == 'shelf':
         print(get_shelf())
-    
-    elif comand_code == 'l':
+    elif comand_code == 'list':
         print(get_list())
-
-    elif comand_code == 'a':
+    elif comand_code == 'add':
         print(add_doc())
-
     elif comand_code == 'end':
         break
+    else:
+        print('Command not found:', comand_code) 
