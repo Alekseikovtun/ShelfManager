@@ -28,7 +28,7 @@ def add_doc():
     doc["number"] = input('Add a document number: ')
     doc["name"] = input('Add Name: ')
     documents.append(doc)
-    directories[shelf] = doc["number"]
+    directories[shelf].append(doc['number'])
     return documents, directories
 
 
