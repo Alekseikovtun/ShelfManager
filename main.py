@@ -2,33 +2,35 @@ from xml.dom.minidom import Document
 
 
 def get_name():
-    number = input('Введите номер документа')
+    number = input('Enter the document number')
     for data in documents:
         if data.get("number") == number:
             return data.get('name')
-    return 'Документа с таким номером не найдено'
+    return 'No dicument with this number was found'
 
 
 def get_shelf():
-    number = input('Введите номер документа')
+    number = input('Enter the document number')
     for shelf_key in directories:
         if number in directories.get(shelf_key):
             return shelf_key
-    return 'На полках с нет документа с таким номером'
+    return 'There is no document with this number on the shelves'
 
 
 def get_list():
-    for docs in documents:
-        return docs
+    for doc in documents:
+        return doc
 
 
 def add_doc():
-    shelf = input('Введите номер полки, куда хотите положить документ: ')
+    shelf = input('Enter the number of the shelf where u want to put the document: ')
     if shelf not in directories:
-        return 'Нет такой полки'
+        return 'There is no such shelf'
     doc = {}
-    for docs_info in ('type, )
-    return
+    doc["type"] = input('Add a document type: ')
+    doc["number"] = input('Add a document number: ')
+    doc["name"] = input('Add Name: ')
+    return doc
 
 
 
@@ -44,3 +46,22 @@ directories = {
     '3': []
 }
 
+
+while True:
+    print('Available commands: p, s, l, a, end')
+    comand_code = input('Enter command name: ')
+
+    if comand_code == 'p':
+        print(get_name())
+
+    elif comand_code == 's':
+        print(get_shelf())
+    
+    elif comand_code == 'l':
+        print(get_list())
+
+    elif comand_code == 'a':
+        print(add_doc())
+
+    elif comand_code == 'end':
+        break
