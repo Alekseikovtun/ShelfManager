@@ -1,8 +1,9 @@
+import copy
 class ShelfManager:
 
     def __init__(self, docs, dirs):
-        self.documents = docs
-        self.directories = dirs
+        self.documents = copy.deepcopy(docs)
+        self.directories = copy.deepcopy(dirs)
         print(id(docs), id(self.documents))
 
     def get_name(self):
