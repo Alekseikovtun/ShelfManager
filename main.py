@@ -1,4 +1,6 @@
 import copy
+
+
 class ShelfManager:
 
     def __init__(self, docs, dirs):
@@ -24,7 +26,8 @@ class ShelfManager:
         return (id(self.documents))
 
     def add_doc(self):
-        shelf = input('Enter the number of the shelf where u want to put the document: ')
+        shelf = input('Enter the number of the \
+        shelf where u want to put the document: ')
         if shelf not in self.directories:
             return 'There is no such shelf'
         doc = {}
@@ -39,7 +42,6 @@ class ShelfManager:
         while True:
             print('Available commands: people, shelf, list, add, end')
             comand_code = input('Enter command name: ')
-                
             if comand_code == 'people':
                 print(self.get_name())
             elif comand_code == 'shelf':
@@ -51,8 +53,7 @@ class ShelfManager:
             elif comand_code == 'end':
                 break
             else:
-                print('Command not found:', comand_code) 
-
+                print('Command not found:', comand_code)
 
 
 inp_documents = [
@@ -74,4 +75,3 @@ addshelves_1 = ShelfManager(inp_documents, inp_directories)
 addshelves_1.start()
 print(addshelves_0.get_list())
 print(addshelves_1.get_list())
-
