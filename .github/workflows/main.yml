@@ -10,12 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Hello Messege
+      - name: Print Hello Messege in my_testing
         run: echo "Hello World! from testing"
         
   my_testint2:
     runs-on: ubuntu-latest
+    needs: [my_testing]
     
     steps:
-      - name: Print Hello Messege
+      - name: Print Hello Messege in my_testing2
         run: echo "Hello World! from testing2"
