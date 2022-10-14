@@ -1,7 +1,4 @@
-import package_def.add as add
-import package_def.all as all
-import package_def.people as people
-import package_def.shelf as shelf
+from package_def import add, all, people, shelf
 
 if __name__ == '__main__':
     def start():

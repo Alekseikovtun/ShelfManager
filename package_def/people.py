@@ -6,4 +6,4 @@ def get_name():
     for data in inp_documents:
         if data.get("number") == number:
             return data.get('name')
-    return 'No dicument with this number was found'
+    return 'No document with this number was found'
