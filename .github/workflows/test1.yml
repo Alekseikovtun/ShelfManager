@@ -23,6 +23,7 @@ jobs:
           pip install mypy
           pip install flake8
           pip install isort
+          pip install pytest
       
       - name: Mypy check
         run: mypy .
@@ -32,4 +33,7 @@ jobs:
       
       - name: ISort check
         run: isort .
+      
+      - name: Testing the code
+        run: pytest .
         
