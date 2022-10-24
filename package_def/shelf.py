@@ -1,4 +1,4 @@
-from package_data.data import inp_directories, inp_documents
+from package_data.data import inp_directories
 
 
 def get_shelf():
