@@ -9,3 +9,10 @@ inp_directories = {
     '2': ['10006'],
     '3': []
 }
+
+
+def test_get_name():
+    number = '11-2'
+    for data in inp_documents:
+        if data.get("number") == number:
+            assert data.get('name') == 'Геннадий Покемонов'
