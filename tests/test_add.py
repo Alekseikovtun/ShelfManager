@@ -1,10 +1,11 @@
+import typing
+
+
 inp_documents = [
     {"type": "insurance", "number": "10006", "name": "Аристарх Павлов"}
 ]
 
-inp_directories = {
-    '3': []
-}
+inp_directories = {'3': []}  # type: typing.Dict[str, typing.List[str]]
 
 
 def test_add_doc1():
